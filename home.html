@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Starlight Hospital — Home</title>
+  
+  <!-- Internal CSS -->
+  <style>
+    :root {
+      --primary-color: #0F4C75;
+      --secondary-color: #3282B8;
+      --accent-color: #00A8CC;
+      --light-blue: #BBE1FA;
+      --text-dark: #1B2951;
+      --text-light: #4A6FA5;
+      --background: #F0F8FF;
+      --surface: #FFFFFF;
+      --border: #D1E7FF;
+      --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
+      --light-gradient: linear-gradient(135deg, var(--light-blue) 0%, #FFFFFF 100%);
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(17,41,68,0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--background);
+      color: var(--text-dark);
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header .brand {
+      font-weight: bold;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      gap: 14px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    nav a:hover {
+      background: var(--light-blue);
+      color: var(--text-dark);
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 20px;
+      align-items: center;
+      padding: 60px 20px;
+      background: var(--light-gradient);
+    }
+    .hero h1 {
+      color: var(--primary-color);
+      margin-top: 0;
+    }
+    .hero p {
+      color: var(--text-light);
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn.primary {
+      background: var(--primary-color);
+      color: #fff;
+    }
+    .btn.outline {
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    /* Appointment card */
+    .card {
+      background: var(--surface);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card input, .card select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .card button {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 8px;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 14px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      color: var(--text-light);
+    }
+
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="brand">Starlight Hospital</a>
+    <nav>
+       <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="doctors.html">Doctors</a>
+      <a href="department.html">Departments</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <h1>Compassionate Care. Advanced Medicine.</h1>
+        <p>World-class specialists and 24/7 emergency care for your family.</p>
+        <a href="#appointment" class="btn primary">Book Appointment</a>
+        <a href="#services" class="btn outline">Explore Services</a>
+      </div>
+
+      <div class="card">
+        <h3>Quick Appointment</h3>
+        <form id="quickForm">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="tel" name="phone" placeholder="Phone" required />
+          <select name="department" required>
+            <option value="">Select department</option>
+            <option>Cardiology</option>
+            <option>Neurology</option>
+            <option>Orthopedics</option>
+          </select>
+          <button type="submit">Request</button>
+        </form>
+        <small id="msg" style="color: var(--text-light); display:block; margin-top:6px;"></small>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Starlight Hospital — All rights reserved
+  </footer>
+
+  <!-- Internal JavaScript -->
+  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // handle quick form
+    document.getElementById('quickForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      console.log('Form submitted:', data);
+      document.getElementById('msg').textContent = "Request received. We'll call you back!";
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

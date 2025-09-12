@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Us — Starlight Hospital</title>
+  
+  <!-- Internal CSS -->
+  <style>
+    :root {
+      --primary-color: #0F4C75;
+      --secondary-color: #3282B8;
+      --accent-color: #00A8CC;
+      --light-blue: #BBE1FA;
+      --text-dark: #1B2951;
+      --text-light: #4A6FA5;
+      --background: #F0F8FF;
+      --surface: #FFFFFF;
+      --border: #D1E7FF;
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(17,41,68,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--background);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header .brand {
+      font-weight: bold;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      gap: 14px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    nav a:hover {
+      background: var(--light-blue);
+      color: var(--text-dark);
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1 {
+      color: var(--primary-color);
+      margin-bottom: 16px;
+      font-size: 2rem;
+    }
+    p {
+      margin-bottom: 14px;
+      color: var(--text-light);
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin: 30px 0;
+    }
+    .card {
+      background: var(--surface);
+      padding: 18px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .card h3 {
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+    }
+
+    .accordion {
+      margin-top: 30px;
+    }
+    .acc-item {
+      margin-bottom: 10px;
+    }
+    .acc-q {
+      width: 100%;
+      text-align: left;
+      padding: 12px;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+    .acc-a {
+      display: none;
+      padding: 12px;
+      border-left: 3px solid var(--accent-color);
+      margin-top: 4px;
+      background: #fff;
+      border-radius: 0 0 var(--radius) var(--radius);
+      color: var(--text-light);
+    }
+
+    footer {
+      text-align: center;
+      padding: 14px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="brand">Starlight Hospital</a>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="doctors.html">Doctors</a>
+      <a href="department.html">Departments</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>About Starlight Hospital</h1>
+    <p>Founded in 1998, Starlight Hospital has been committed to delivering compassionate healthcare with the latest medical technology. We are recognized as one of the most trusted hospitals in the region, with a patient-first approach that blends expertise, innovation, and care.</p>
+
+    <div class="highlights">
+      <div class="card">
+        <h3>120+</h3>
+        <p>Expert Doctors</p>
+      </div>
+      <div class="card">
+        <h3>30+</h3>
+        <p>Medical Departments</p>
+      </div>
+      <div class="card">
+        <h3>98%</h3>
+        <p>Patient Satisfaction</p>
+      </div>
+      <div class="card">
+        <h3>24/7</h3>
+        <p>Emergency Care</p>
+      </div>
+    </div>
+
+    <section class="accordion">
+      <h2 style="color: var(--secondary-color); margin-bottom:12px;">Our Core Values</h2>
+      <div class="acc-item">
+        <button class="acc-q">Compassion</button>
+        <div class="acc-a">We treat every patient with kindness and empathy, focusing on their well-being beyond just medical treatment.</div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">Excellence</button>
+        <div class="acc-a">Our team strives for continuous improvement, using cutting-edge technology and best practices in healthcare.</div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">Integrity</button>
+        <div class="acc-a">We uphold the highest ethical standards and transparency in all our medical and administrative practices.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Starlight Hospital — Caring for life
+  </footer>
+
+  <!-- Internal JavaScript -->
+  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // accordion logic
+    document.querySelectorAll('.acc-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const panel = btn.nextElementSibling;
+        const isOpen = panel.style.display === "block";
+        document.querySelectorAll('.acc-a').forEach(a => a.style.display = "none");
+        panel.style.display = isOpen ? "none" : "block";
+      });
+    });
+  </script>
+</body>
+</html>

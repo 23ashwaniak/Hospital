@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Departments — Starlight Hospital</title>
+
+  <!-- Internal CSS -->
+  <style>
+    :root {
+      --primary-color: #0F4C75;
+      --secondary-color: #3282B8;
+      --accent-color: #00A8CC;
+      --light-blue: #BBE1FA;
+      --text-dark: #1B2951;
+      --text-light: #4A6FA5;
+      --background: #F0F8FF;
+      --surface: #FFFFFF;
+      --border: #D1E7FF;
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(17,41,68,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--background);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header .brand {
+      font-weight: bold;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      gap: 14px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    nav a:hover {
+      background: var(--light-blue);
+      color: var(--text-dark);
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h1 {
+      color: var(--primary-color);
+      margin-bottom: 16px;
+      font-size: 2rem;
+      text-align: center;
+    }
+    p.intro {
+      color: var(--text-light);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .dept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .dept-card {
+      background: var(--surface);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .dept-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(17,41,68,0.15);
+    }
+    .dept-card h3 {
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+    }
+    .dept-card p {
+      color: var(--text-light);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 200;
+    }
+    .modal-content {
+      background: var(--surface);
+      padding: 24px;
+      border-radius: var(--radius);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .modal-content h2 {
+      color: var(--primary-color);
+      margin-bottom: 12px;
+    }
+    .modal-content p {
+      color: var(--text-light);
+    }
+    .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--accent-color);
+    }
+
+    footer {
+      text-align: center;
+      padding: 14px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="brand">Starlight Hospital</a>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="doctors.html">Doctors</a>
+      <a href="department.html">Departments</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Our Departments</h1>
+    <p class="intro">Starlight Hospital houses a wide range of specialized medical departments to ensure comprehensive healthcare under one roof.</p>
+
+    <div class="dept-grid">
+      <div class="dept-card" data-dept="cardiology">
+        <h3>Cardiology</h3>
+        <p>Advanced heart care with expert cardiologists.</p>
+      </div>
+      <div class="dept-card" data-dept="neurology">
+        <h3>Neurology</h3>
+        <p>Specialized treatment for brain and nervous system.</p>
+      </div>
+      <div class="dept-card" data-dept="orthopedics">
+        <h3>Orthopedics</h3>
+        <p>Bone, joint, and sports injury treatments.</p>
+      </div>
+      <div class="dept-card" data-dept="pediatrics">
+        <h3>Pediatrics</h3>
+        <p>Comprehensive healthcare for children and adolescents.</p>
+      </div>
+      <div class="dept-card" data-dept="oncology">
+        <h3>Oncology</h3>
+        <p>Cutting-edge cancer care and support programs.</p>
+      </div>
+      <div class="dept-card" data-dept="dermatology">
+        <h3>Dermatology</h3>
+        <p>Skin, hair, and cosmetic treatments.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="deptModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2 id="modalTitle">Department</h2>
+      <p id="modalDesc">More information about the department will appear here.</p>
+    </div>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Starlight Hospital — Excellence in healthcare
+  </footer>
+
+  <!-- Internal JavaScript -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const deptInfo = {
+      cardiology: "Our Cardiology department provides advanced diagnostics, interventional cardiology, and preventive heart care.",
+      neurology: "Our Neurology team specializes in treating brain, spine, and nervous system disorders with precision.",
+      orthopedics: "From joint replacements to sports medicine, our Orthopedics team ensures healthy movement.",
+      pediatrics: "Our Pediatrics department ensures comprehensive health solutions for infants to teenagers.",
+      oncology: "Our Oncology department offers world-class cancer treatments with compassionate support.",
+      dermatology: "Dermatology experts treat skin conditions, hair loss, and offer cosmetic solutions."
+    };
+
+    const modal = document.getElementById('deptModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const closeModal = document.getElementById('closeModal');
+
+    document.querySelectorAll('.dept-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const dept = card.dataset.dept;
+        modalTitle.textContent = card.querySelector('h3').textContent;
+        modalDesc.textContent = deptInfo[dept];
+        modal.style.display = "flex";
+      });
+    });
+
+    closeModal.addEventListener('click', () => modal.style.display = "none");
+    window.addEventListener('click', e => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+  </script>
+</body>
+</html>

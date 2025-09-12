@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Patient Portal — Starlight Hospital</title>
+
+  <!-- Internal CSS -->
+  <style>
+    :root {
+      --primary-color: #0F4C75;
+      --secondary-color: #3282B8;
+      --accent-color: #00A8CC;
+      --light-blue: #BBE1FA;
+      --text-dark: #1B2951;
+      --text-light: #4A6FA5;
+      --background: #F0F8FF;
+      --surface: #FFFFFF;
+      --border: #D1E7FF;
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(17,41,68,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--background);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header .brand {
+      font-weight: bold;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      gap: 14px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    nav a:hover {
+      background: var(--light-blue);
+      color: var(--text-dark);
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h1 {
+      color: var(--primary-color);
+      margin-bottom: 16px;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    /* Login Form */
+    .login-box {
+      max-width: 400px;
+      margin: 40px auto;
+      background: var(--surface);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .login-box label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+      font-weight: bold;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    .login-box button {
+      background: var(--primary-color);
+      color: white;
+      padding: 10px 14px;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      width: 100%;
+    }
+    .login-box button:hover {
+      background: var(--accent-color);
+    }
+
+    /* Dashboard */
+    .dashboard {
+      display: none;
+    }
+    .card {
+      background: var(--surface);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+    }
+    .logout-btn {
+      background: var(--accent-color);
+      color: white;
+      padding: 8px 14px;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      float: right;
+    }
+    .logout-btn:hover {
+      background: var(--primary-color);
+    }
+
+    footer {
+      text-align: center;
+      padding: 14px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="brand">Starlight Hospital</a>
+    <nav>
+       <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="doctors.html">Doctors</a>
+      <a href="department.html">Departments</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Patient Portal</h1>
+
+    <!-- Login Form -->
+    <div class="login-box" id="loginBox">
+      <form id="loginForm">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password">
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard">
+      <button class="logout-btn" id="logoutBtn">Logout</button>
+
+      <div class="card">
+        <h2>Welcome, John Doe</h2>
+        <p>Email: johndoe@example.com</p>
+        <p>Patient ID: ST123456</p>
+      </div>
+
+      <div class="card">
+        <h2>Upcoming Appointments</h2>
+        <ul>
+          <li>✔️ 20th Sept, 2025 — Cardiology with Dr. John Smith</li>
+          <li>✔️ 5th Oct, 2025 — Neurology with Dr. Jane Doe</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Medical Records</h2>
+        <p>📄 Latest Blood Test: Normal</p>
+        <p>📄 X-Ray: Mild Sprain</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Starlight Hospital — Secure Patient Access
+  </footer>
+
+  <!-- Internal JavaScript -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const loginForm = document.getElementById('loginForm');
+    const loginBox = document.getElementById('loginBox');
+    const dashboard = document.getElementById('dashboard');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!email || !password) {
+        alert("❗ Please enter both email and password.");
+        return;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        alert("❗ Please enter a valid email.");
+        return;
+      }
+
+      if (password.length < 4) {
+        alert("❗ Password must be at least 4 characters.");
+        return;
+      }
+
+      // Fake login success
+      loginBox.style.display = "none";
+      dashboard.style.display = "block";
+    });
+
+    logoutBtn.addEventListener('click', function() {
+      dashboard.style.display = "none";
+      loginBox.style.display = "block";
+      loginForm.reset();
+    });
+  </script>
+</body>
+</html>

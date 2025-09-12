@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Our Services — Starlight Hospital</title>
+
+  <!-- Internal CSS -->
+  <style>
+    :root {
+      --primary-color: #0F4C75;
+      --secondary-color: #3282B8;
+      --accent-color: #00A8CC;
+      --light-blue: #BBE1FA;
+      --text-dark: #1B2951;
+      --text-light: #4A6FA5;
+      --background: #F0F8FF;
+      --surface: #FFFFFF;
+      --border: #D1E7FF;
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(17,41,68,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--background);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header .brand {
+      font-weight: bold;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      gap: 14px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    nav a:hover {
+      background: var(--light-blue);
+      color: var(--text-dark);
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h1 {
+      color: var(--primary-color);
+      margin-bottom: 16px;
+      font-size: 2rem;
+      text-align: center;
+    }
+    p.intro {
+      color: var(--text-light);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(17,41,68,0.15);
+    }
+    .card h3 {
+      color: var(--secondary-color);
+      margin-bottom: 8px;
+    }
+    .card p {
+      color: var(--text-light);
+    }
+
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .filter-buttons button {
+      border: none;
+      padding: 8px 14px;
+      margin: 6px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      background: var(--primary-color);
+      color: white;
+    }
+    .filter-buttons button.active {
+      background: var(--accent-color);
+    }
+
+    footer {
+      text-align: center;
+      padding: 14px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="brand">Starlight Hospital</a>
+    <nav>
+       <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="doctors.html">Doctors</a>
+      <a href="department.html">Departments</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Our Medical Services</h1>
+    <p class="intro">Starlight Hospital provides a wide range of medical services designed to meet the needs of every patient with compassion and care.</p>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="emergency">Emergency</button>
+      <button data-filter="surgery">Surgery</button>
+      <button data-filter="specialty">Specialty</button>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="services-grid">
+      <div class="card" data-category="emergency">
+        <h3>24/7 Emergency Care</h3>
+        <p>Immediate medical attention available around the clock for urgent cases.</p>
+      </div>
+      <div class="card" data-category="surgery">
+        <h3>Advanced Surgery</h3>
+        <p>State-of-the-art operation theaters and highly skilled surgical teams.</p>
+      </div>
+      <div class="card" data-category="specialty">
+        <h3>Cardiology</h3>
+        <p>Expert cardiologists providing comprehensive heart care.</p>
+      </div>
+      <div class="card" data-category="specialty">
+        <h3>Neurology</h3>
+        <p>Specialized treatment for brain, spine, and nervous system disorders.</p>
+      </div>
+      <div class="card" data-category="surgery">
+        <h3>Orthopedics</h3>
+        <p>Comprehensive bone and joint care including joint replacement surgeries.</p>
+      </div>
+      <div class="card" data-category="specialty">
+        <h3>Pediatrics</h3>
+        <p>Child-focused healthcare ensuring the best care for young patients.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Starlight Hospital — Healing with care
+  </footer>
+
+  <!-- Internal JavaScript -->
+  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // filtering functionality
+    const buttons = document.querySelectorAll('.filter-buttons button');
+    const cards = document.querySelectorAll('.services-grid .card');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // update active button
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        cards.forEach(card => {
+          if (filter === "all" || card.dataset.category === filter) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
