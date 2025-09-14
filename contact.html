@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact Us — Starlight Hospital</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact Us — Starlight Hospital</title>
 
-  <!-- Internal CSS -->
-  <style>
+    <!-- Internal CSS -->
+    <style>
     :root {
       --primary-color: #0F4C75;
       --secondary-color: #3282B8;
@@ -148,62 +148,68 @@
       iframe { height: 300px; }
     }
   </style>
-</head>
-<body>
+  </head>
+  <body>
 
-  <header>
-    <a href="index.html" class="brand">Starlight Hospital</a>
-    <nav>
-       <a href="home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="doctors.html">Doctors</a>
-      <a href="department.html">Departments</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <header>
+      <a href="index.html" class="brand">Starlight Hospital</a>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="department.html">Departments</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <main>
-    <h1>Contact Us</h1>
-    <p class="intro">Have questions or need to book an appointment? Get in touch with us using the form below or visit our hospital.</p>
+    <main>
+      <h1>Contact Us</h1>
+      <p class="intro">Have questions or need to book an appointment? Get in
+        touch with us using the form below or visit our hospital.</p>
 
-    <div class="contact-container">
-      <!-- Form -->
-      <div class="contact-form">
-        <form id="contactForm">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Your full name">
+      <div class="contact-container">
+        <!-- Form -->
+        <div class="contact-form">
+          <form id="contactForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name"
+              placeholder="Your full name">
 
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email"
+              placeholder="you@example.com">
 
-          <label for="phone">Phone Number</label>
-          <input type="text" id="phone" name="phone" placeholder="+123 456 7890">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone"
+              placeholder="+123 456 7890">
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Type your message here..."></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4"
+              placeholder="Type your message here..."></textarea>
 
-          <button type="submit">Send Message</button>
-          <p class="success-message" id="successMsg">✅ Thank you! Your message has been sent.</p>
-        </form>
+            <button type="submit">Send Message</button>
+            <p class="success-message" id="successMsg">✅ Thank you! Your message
+              has been sent.</p>
+          </form>
+        </div>
+
+        <!-- Map -->
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509569!2d144.95373531531088!3d-37.81627974201343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ5JzAxLjAiUyAxNDTCsDU3JzE4LjAiRQ!5e0!3m2!1sen!2s!4v1611275665091!5m2!1sen!2s"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
       </div>
+    </main>
 
-      <!-- Map -->
-      <div class="map">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509569!2d144.95373531531088!3d-37.81627974201343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ5JzAxLjAiUyAxNDTCsDU3JzE4LjAiRQ!5e0!3m2!1sen!2s!4v1611275665091!5m2!1sen!2s" 
-          allowfullscreen="" loading="lazy">
-        </iframe>
-      </div>
-    </div>
-  </main>
+    <footer>
+      © <span id="year"></span> Starlight Hospital — Always here for you
+    </footer>
 
-  <footer>
-    © <span id="year"></span> Starlight Hospital — Always here for you
-  </footer>
-
-  <!-- Internal JavaScript -->
-  <script>
+    <!-- Internal JavaScript -->
+    <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const form = document.getElementById('contactForm');
@@ -238,5 +244,5 @@
       }, 4000);
     });
   </script>
-</body>
+  </body>
 </html>

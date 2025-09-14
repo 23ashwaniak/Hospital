@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Our Services — Starlight Hospital</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Our Services — Starlight Hospital</title>
 
-  <!-- Internal CSS -->
-  <style>
+    <!-- Internal CSS -->
+    <style>
     :root {
       --primary-color: #0F4C75;
       --secondary-color: #3282B8;
@@ -130,68 +130,75 @@
       color: var(--text-light);
     }
   </style>
-</head>
-<body>
+  </head>
+  <body>
 
-  <header>
-    <a href="index.html" class="brand">Starlight Hospital</a>
-    <nav>
-       <a href="home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="doctors.html">Doctors</a>
-      <a href="department.html">Departments</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <header>
+      <a href="index.html" class="brand">Starlight Hospital</a>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="department.html">Departments</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <main>
-    <h1>Our Medical Services</h1>
-    <p class="intro">Starlight Hospital provides a wide range of medical services designed to meet the needs of every patient with compassion and care.</p>
+    <main>
+      <h1>Our Medical Services</h1>
+      <p class="intro">Starlight Hospital provides a wide range of medical
+        services designed to meet the needs of every patient with compassion and
+        care.</p>
 
-    <!-- Filter Buttons -->
-    <div class="filter-buttons">
-      <button class="active" data-filter="all">All</button>
-      <button data-filter="emergency">Emergency</button>
-      <button data-filter="surgery">Surgery</button>
-      <button data-filter="specialty">Specialty</button>
-    </div>
+      <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="emergency">Emergency</button>
+        <button data-filter="surgery">Surgery</button>
+        <button data-filter="specialty">Specialty</button>
+      </div>
 
-    <!-- Services Grid -->
-    <div class="services-grid">
-      <div class="card" data-category="emergency">
-        <h3>24/7 Emergency Care</h3>
-        <p>Immediate medical attention available around the clock for urgent cases.</p>
+      <!-- Services Grid -->
+      <div class="services-grid">
+        <div class="card" data-category="emergency">
+          <h3>24/7 Emergency Care</h3>
+          <p>Immediate medical attention available around the clock for urgent
+            cases.</p>
+        </div>
+        <div class="card" data-category="surgery">
+          <h3>Advanced Surgery</h3>
+          <p>State-of-the-art operation theaters and highly skilled surgical
+            teams.</p>
+        </div>
+        <div class="card" data-category="specialty">
+          <h3>Cardiology</h3>
+          <p>Expert cardiologists providing comprehensive heart care.</p>
+        </div>
+        <div class="card" data-category="specialty">
+          <h3>Neurology</h3>
+          <p>Specialized treatment for brain, spine, and nervous system
+            disorders.</p>
+        </div>
+        <div class="card" data-category="surgery">
+          <h3>Orthopedics</h3>
+          <p>Comprehensive bone and joint care including joint replacement
+            surgeries.</p>
+        </div>
+        <div class="card" data-category="specialty">
+          <h3>Pediatrics</h3>
+          <p>Child-focused healthcare ensuring the best care for young
+            patients.</p>
+        </div>
       </div>
-      <div class="card" data-category="surgery">
-        <h3>Advanced Surgery</h3>
-        <p>State-of-the-art operation theaters and highly skilled surgical teams.</p>
-      </div>
-      <div class="card" data-category="specialty">
-        <h3>Cardiology</h3>
-        <p>Expert cardiologists providing comprehensive heart care.</p>
-      </div>
-      <div class="card" data-category="specialty">
-        <h3>Neurology</h3>
-        <p>Specialized treatment for brain, spine, and nervous system disorders.</p>
-      </div>
-      <div class="card" data-category="surgery">
-        <h3>Orthopedics</h3>
-        <p>Comprehensive bone and joint care including joint replacement surgeries.</p>
-      </div>
-      <div class="card" data-category="specialty">
-        <h3>Pediatrics</h3>
-        <p>Child-focused healthcare ensuring the best care for young patients.</p>
-      </div>
-    </div>
-  </main>
+    </main>
 
-  <footer>
-    © <span id="year"></span> Starlight Hospital — Healing with care
-  </footer>
+    <footer>
+      © <span id="year"></span> Starlight Hospital — Healing with care
+    </footer>
 
-  <!-- Internal JavaScript -->
-  <script>
+    <!-- Internal JavaScript -->
+    <script>
     // dynamic year
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -216,5 +223,5 @@
       });
     });
   </script>
-</body>
+  </body>
 </html>

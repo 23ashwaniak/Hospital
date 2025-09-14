@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Starlight Hospital — Home</title>
-  
-  <!-- Internal CSS -->
-  <style>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Starlight Hospital — Home</title>
+
+    <!-- Internal CSS -->
+    <style>
     :root {
       --primary-color: #0F4C75;
       --secondary-color: #3282B8;
@@ -132,55 +132,57 @@
       .hero { grid-template-columns: 1fr; }
     }
   </style>
-</head>
-<body>
+  </head>
+  <body>
 
-  <header>
-    <a href="#" class="brand">Starlight Hospital</a>
-    <nav>
-       <a href="home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="doctors.html">Doctors</a>
-      <a href="department.html">Departments</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <header>
+      <a href="#" class="brand">Starlight Hospital</a>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="department.html">Departments</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div>
-        <h1>Compassionate Care. Advanced Medicine.</h1>
-        <p>World-class specialists and 24/7 emergency care for your family.</p>
-        <a href="#appointment" class="btn primary">Book Appointment</a>
-        <a href="#services" class="btn outline">Explore Services</a>
-      </div>
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div>
+          <h1>Compassionate Care. Advanced Medicine.</h1>
+          <p>World-class specialists and 24/7 emergency care for your
+            family.</p>
+          <a href="#appointment" class="btn primary">Book Appointment</a>
+          <a href="#services" class="btn outline">Explore Services</a>
+        </div>
 
-      <div class="card">
-        <h3>Quick Appointment</h3>
-        <form id="quickForm">
-          <input type="text" name="name" placeholder="Your name" required />
-          <input type="tel" name="phone" placeholder="Phone" required />
-          <select name="department" required>
-            <option value="">Select department</option>
-            <option>Cardiology</option>
-            <option>Neurology</option>
-            <option>Orthopedics</option>
-          </select>
-          <button type="submit">Request</button>
-        </form>
-        <small id="msg" style="color: var(--text-light); display:block; margin-top:6px;"></small>
-      </div>
-    </section>
-  </main>
+        <div class="card">
+          <h3>Quick Appointment</h3>
+          <form id="quickForm">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="tel" name="phone" placeholder="Phone" required />
+            <select name="department" required>
+              <option value>Select department</option>
+              <option>Cardiology</option>
+              <option>Neurology</option>
+              <option>Orthopedics</option>
+            </select>
+            <button type="submit">Request</button>
+          </form>
+          <small id="msg"
+            style="color: var(--text-light); display:block; margin-top:6px;"></small>
+        </div>
+      </section>
+    </main>
 
-  <footer>
-    © <span id="year"></span> Starlight Hospital — All rights reserved
-  </footer>
+    <footer>
+      © <span id="year"></span> Starlight Hospital — All rights reserved
+    </footer>
 
-  <!-- Internal JavaScript -->
-  <script>
+    <!-- Internal JavaScript -->
+    <script>
     // dynamic year
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -193,5 +195,5 @@
       e.target.reset();
     });
   </script>
-</body>
+  </body>
 </html>

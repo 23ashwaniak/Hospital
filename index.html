@@ -1,377 +1,413 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Starlight Hospital — Comprehensive Care</title>
-  <meta name="description" content="Starlight Hospital — compassionate care, advanced medicine. Book appointments, meet our doctors, explore services." />
-  <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts (optional) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- HEADER / NAV (excluded from the 10+ sections) -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home">Starlight<span>Hospital</span></a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Starlight Hospital — Comprehensive Care</title>
+    <meta name="description"
+      content="Starlight Hospital — compassionate care, advanced medicine. Book appointments, meet our doctors, explore services." />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts (optional) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet">
+  </head>
+  <body>
+    <!-- HEADER / NAV (excluded from the 10+ sections) -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home">Starlight<span>Hospital</span></a>
 
-      <nav class="main-nav" id="mainNav">
-        <!-- 6 links requested -->
         <nav class="main-nav" id="mainNav">
-  <a href="home.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="departments.html">Departments</a>
-  <a href="doctors.html">Doctors</a>
-  <a href="contact.html">Contact</a>
-  <a href="patient-portal.html">Patient Portal</a>
-</nav>
-        <button class="nav-cta" id="portalBtn">Patient Portal</button>
-      </nav>
+          <!-- 6 links requested -->
+          <nav class="main-nav" id="mainNav">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="departments.html">Departments</a>
+            <a href="doctors.html">Doctors</a>
+            <a href="contact.html">Contact</a>
+            <a href="patient-portal.html">Patient Portal</a>
+          </nav>
+          <button class="nav-cta" id="portalBtn">Patient Portal</button>
+        </nav>
 
-      <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle menu">☰</button>
-    </div>
-  </header>
+        <button id="mobileToggle" class="mobile-toggle"
+          aria-label="Toggle menu">☰</button>
+      </div>
+    </header>
 
-  <main id="home">
-    <!-- 1. HERO / CTA -->
-    <section class="hero" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Compassionate care. Advanced medicine.</h1>
-          <p class="lead">24/7 emergency, world-class specialists, and a patient-first approach to healthcare.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#appointment">Book Appointment</a>
-            <a class="btn outline" href="#services">Our Services</a>
+    <main id="home">
+      <!-- 1. HERO / CTA -->
+      <section class="hero" id="hero">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <h1>Compassionate care. Advanced medicine.</h1>
+            <p class="lead">24/7 emergency, world-class specialists, and a
+              patient-first approach to healthcare.</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#appointment">Book Appointment</a>
+              <a class="btn outline" href="#services">Our Services</a>
+            </div>
+            <ul class="quick-stats">
+              <li><strong>24/7</strong><span>Emergency</span></li>
+              <li><strong>120+</strong><span>Doctors</span></li>
+              <li><strong>30+</strong><span>Departments</span></li>
+            </ul>
           </div>
-          <ul class="quick-stats">
-            <li><strong>24/7</strong><span>Emergency</span></li>
-            <li><strong>120+</strong><span>Doctors</span></li>
-            <li><strong>30+</strong><span>Departments</span></li>
+          <div class="hero-card">
+            <div class="card-inner">
+              <h3>Quick Appointment</h3>
+              <form id="quickForm" class="card-form">
+                <input type="text" name="name" placeholder="Your name"
+                  required />
+                <input type="tel" name="phone" placeholder="Phone" required />
+                <select name="department" required>
+                  <option value>Select department</option>
+                  <option>Cardiology</option>
+                  <option>Neurology</option>
+                  <option>Orthopedics</option>
+                  <option>Pediatrics</option>
+                </select>
+                <button type="submit" class="btn small">Request</button>
+              </form>
+              <small class="muted">We'll call to confirm within 24
+                hours.</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. ABOUT -->
+      <section id="about" class="section about"
+        style="--section-padding: var(--section-padding);">
+        <div class="container">
+          <div class="split">
+            <div>
+              <h2>About Starlight Hospital</h2>
+              <p>Since 1998 we've combined patient-centered care with
+                cutting-edge research. Our mission is to deliver safe, effective
+                care with compassion and respect.</p>
+              <ul class="bullets">
+                <li>Accredited multidisciplinary teams</li>
+                <li>Modern diagnostic imaging & labs</li>
+                <li>Community outreach & preventive programs</li>
+              </ul>
+              <a href="#departments" class="btn">Explore Departments</a>
+            </div>
+            <div class="about-stats">
+              <div class="stat">
+                <h3>98%</h3><p>Patient satisfaction</p>
+              </div>
+              <div class="stat">
+                <h3>50K+</h3><p>Annual visits</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SERVICES -->
+      <section id="services" class="section services">
+        <div class="container">
+          <h2>Our Services</h2>
+          <p class="muted">Comprehensive services covering preventive to
+            tertiary care.</p>
+          <div class="services-grid">
+            <article class="service">
+              <h4>Emergency Care</h4>
+              <p>Rapid response, trauma specialists and 24/7 coverage.</p>
+            </article>
+            <article class="service">
+              <h4>Surgery & ICU</h4>
+              <p>Minimally invasive and complex surgical procedures with
+                dedicated ICU support.</p>
+            </article>
+            <article class="service">
+              <h4>Maternal & Child Health</h4>
+              <p>Comprehensive prenatal, delivery and neonatal services.</p>
+            </article>
+            <article class="service">
+              <h4>Diagnostics & Imaging</h4>
+              <p>MRI, CT, Ultrasound, and advanced labs with rapid
+                reporting.</p>
+            </article>
+            <article class="service">
+              <h4>Rehabilitation</h4>
+              <p>Physiotherapy, occupational therapy and long-term care
+                planning.</p>
+            </article>
+            <article class="service">
+              <h4>Telemedicine</h4>
+              <p>Remote consults and follow-ups via secure video.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. DEPARTMENTS -->
+      <section id="departments" class="section departments">
+        <div class="container">
+          <h2>Departments</h2>
+          <div class="dept-grid">
+            <div class="dept-card">
+              <h5>Cardiology</h5>
+              <p>Interventional cardiology & non-invasive testing.</p>
+            </div>
+            <div class="dept-card">
+              <h5>Neurology</h5>
+              <p>Stroke program, EEG and neurorehab.</p>
+            </div>
+            <div class="dept-card">
+              <h5>Orthopedics</h5>
+              <p>Joint replacement, sports medicine.</p>
+            </div>
+            <div class="dept-card">
+              <h5>Oncology</h5>
+              <p>Medical oncology, radiation therapy & support.</p>
+            </div>
+            <div class="dept-card">
+              <h5>Pediatrics</h5>
+              <p>Child health, immunization & wellness.</p>
+            </div>
+            <div class="dept-card">
+              <h5>Gastroenterology</h5>
+              <p>Endoscopy and liver care.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. DOCTORS -->
+      <section id="doctors" class="section doctors">
+        <div class="container">
+          <h2>Our Doctors</h2>
+          <p class="muted">Experienced specialists across disciplines.</p>
+          <div class="doctors-grid">
+            <!-- Example doctor cards -->
+            <div class="doctor">
+              <div class="avatar">DR</div>
+              <h4>Dr. Priya Sharma</h4>
+              <p>Cardiologist — MBBS, MD</p>
+              <a class="small-link" href="#contact">Book</a>
+            </div>
+            <div class="doctor">
+              <div class="avatar">DR</div>
+              <h4>Dr. Rohan Gupta</h4>
+              <p>Orthopedic Surgeon — MS Orth</p>
+              <a class="small-link" href="#contact">Book</a>
+            </div>
+            <div class="doctor">
+              <div class="avatar">DR</div>
+              <h4>Dr. Anjali Rao</h4>
+              <p>Neurologist — DM</p>
+              <a class="small-link" href="#contact">Book</a>
+            </div>
+            <div class="doctor">
+              <div class="avatar">DR</div>
+              <h4>Dr. Sameer Khan</h4>
+              <p>Pediatrician — DCH</p>
+              <a class="small-link" href="#contact">Book</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. APPOINTMENT (form wired to Firebase / fallback) -->
+      <section id="appointment" class="section appointment">
+        <div class="container">
+          <h2>Book an Appointment</h2>
+          <p class="muted">Fill the form and our team will reach out to you.</p>
+          <form id="appointmentForm" class="form-grid">
+            <input type="text" name="name" placeholder="Full name" required />
+            <input type="email" name="email" placeholder="Email address"
+              required />
+            <input type="tel" name="phone" placeholder="Phone" required />
+            <select name="department" required>
+              <option value>Choose Department</option>
+              <option>Cardiology</option>
+              <option>Neurology</option>
+              <option>Orthopedics</option>
+              <option>Pediatrics</option>
+              <option>Oncology</option>
+            </select>
+            <input type="date" name="date" required />
+            <input type="time" name="time" required />
+            <textarea name="notes"
+              placeholder="Concise notes (optional)"></textarea>
+            <button class="btn primary" type="submit">Request
+              Appointment</button>
+          </form>
+          <div id="appointmentMsg" class="muted small"></div>
+        </div>
+      </section>
+
+      <!-- 7. PATIENT PORTAL (links) -->
+      <section id="portal" class="section portal">
+        <div class="container">
+          <h2>Patient Portal & Resources</h2>
+          <p class="muted">Access records, pay bills and check test results.</p>
+          <div class="portal-grid">
+            <a class="portal-card" href="#"
+              onclick="alert('Demo: login required')">Login to Portal</a>
+            <a class="portal-card" href="#"
+              onclick="alert('Demo: pay bills')">Pay Online</a>
+            <a class="portal-card" href="#"
+              onclick="alert('Demo: view records')">Medical Records</a>
+            <a class="portal-card" href="#"
+              onclick="alert('Demo: join telemedicine')">Telemedicine</a>
+            <a class="portal-card" href="#"
+              onclick="alert('Demo: view lab results')">Lab Results</a>
+            <a class="portal-card" href="#"
+              onclick="alert('Demo: prescriptions')">Prescriptions</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. NEWS & ANNOUNCEMENTS -->
+      <section id="news" class="section news">
+        <div class="container">
+          <h2>News & Announcements</h2>
+          <div class="news-list">
+            <article class="news-item">
+              <h4>New Cardiac Cath Lab Opens</h4>
+              <p class="muted">We inaugurated a new cath lab improving
+                procedural capacity.</p>
+              <a class="small-link" href="#">Read more</a>
+            </article>
+            <article class="news-item">
+              <h4>Free Diabetes Screening Camp</h4>
+              <p class="muted">Community screening on 22nd of the month.
+                Walk-ins welcome.</p>
+              <a class="small-link" href="#">Register</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. TESTIMONIALS -->
+      <section id="testimonials" class="section testimonials">
+        <div class="container">
+          <h2>Patient Stories</h2>
+          <div class="testimonial-carousel" id="testCarousel">
+            <blockquote class="testimonial active">
+              <p>"The doctors and nurses made me feel safe and informed through my surgery."
+              </p>
+              <cite>— R. Mehta</cite>
+            </blockquote>
+            <blockquote class="testimonial">
+              <p>"Quick emergency response saved my life — forever grateful."</p>
+              <cite>— S. Iyer</cite>
+            </blockquote>
+            <blockquote class="testimonial">
+              <p>"Excellent pediatric team. My daughter loves the play area and staff."</p>
+              <cite>— A. Bhatt</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. FACILITIES / GALLERY -->
+      <section id="facilities" class="section facilities">
+        <div class="container">
+          <h2>Facilities</h2>
+          <p class="muted">Modern infrastructure supporting patient comfort and
+            clinical excellence.</p>
+          <div class="gallery">
+            <div class="photo">ER</div>
+            <div class="photo">ICU</div>
+            <div class="photo">O.R.</div>
+            <div class="photo">Pediatrics</div>
+            <div class="photo">Cafeteria</div>
+            <div class="photo">Rehab</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. CAREERS -->
+      <section id="careers" class="section careers">
+        <div class="container">
+          <h2>Careers</h2>
+          <p class="muted">Join our team — open roles in clinical and
+            administrative areas.</p>
+          <ul class="job-list">
+            <li><strong>Staff Nurse</strong> — Full time <a href="#"
+                class="small-link">Apply</a></li>
+            <li><strong>Lab Technician</strong> — Part time <a href="#"
+                class="small-link">Apply</a></li>
+            <li><strong>Front Desk Executive</strong> — Full time <a href="#"
+                class="small-link">Apply</a></li>
           </ul>
         </div>
-        <div class="hero-card">
-          <div class="card-inner">
-            <h3>Quick Appointment</h3>
-            <form id="quickForm" class="card-form">
+      </section>
+
+      <!-- 12. FAQ -->
+      <section id="faq" class="section faq">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="accordion" id="faqAcc">
+            <div class="acc-item">
+              <button class="acc-q">What are visiting hours?</button>
+              <div class="acc-a">Visiting hours: 8AM–8PM. ICU follows special
+                rules—please check at reception.</div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-q">Do you accept insurance?</button>
+              <div class="acc-a">We accept most major insurers. Contact billing
+                or check our portal for a full list.</div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-q">How do I get my lab results?</button>
+              <div class="acc-a">Results are uploaded to the Patient Portal
+                within 48 hours. You will also get notified by SMS/email for
+                critical reports.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. CONTACT -->
+      <section id="contact" class="section contact">
+        <div class="container">
+          <h2>Contact Us</h2>
+          <div class="contact-grid">
+            <div>
+              <p><strong>Address:</strong> 123 Health Ave, Uptown</p>
+              <p><strong>Phone:</strong> +91 12345 67890</p>
+              <p><strong>Email:</strong> contact@starlighthospital.example</p>
+              <div class="mini-links">
+                <a href="#appointment" class="small-link">Make Appointment</a>
+                <a href="#careers" class="small-link">Work with us</a>
+              </div>
+            </div>
+
+            <form id="contactForm" class="contact-form">
               <input type="text" name="name" placeholder="Your name" required />
-              <input type="tel" name="phone" placeholder="Phone" required />
-              <select name="department" required>
-                <option value="">Select department</option>
-                <option>Cardiology</option>
-                <option>Neurology</option>
-                <option>Orthopedics</option>
-                <option>Pediatrics</option>
-              </select>
-              <button type="submit" class="btn small">Request</button>
+              <input type="email" name="email" placeholder="Email" required />
+              <textarea name="message" placeholder="Message" rows="4"
+                required></textarea>
+              <button class="btn" type="submit">Send Message</button>
+              <div id="contactMsg" class="muted small"></div>
             </form>
-            <small class="muted">We'll call to confirm within 24 hours.</small>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 2. ABOUT -->
-    <section id="about" class="section about" style="--section-padding: var(--section-padding);">
-      <div class="container">
-        <div class="split">
-          <div>
-            <h2>About Starlight Hospital</h2>
-            <p>Since 1998 we've combined patient-centered care with cutting-edge research. Our mission is to deliver safe, effective care with compassion and respect.</p>
-            <ul class="bullets">
-              <li>Accredited multidisciplinary teams</li>
-              <li>Modern diagnostic imaging & labs</li>
-              <li>Community outreach & preventive programs</li>
-            </ul>
-            <a href="#departments" class="btn">Explore Departments</a>
-          </div>
-          <div class="about-stats">
-            <div class="stat">
-              <h3>98%</h3><p>Patient satisfaction</p>
-            </div>
-            <div class="stat">
-              <h3>50K+</h3><p>Annual visits</p>
-            </div>
-          </div>
+    </main>
+
+    <!-- FOOTER (excluded from the 10+ sections) -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Starlight Hospital</div>
+        <div class="social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">t</a>
+          <a href="#" aria-label="LinkedIn">in</a>
         </div>
       </div>
-    </section>
+    </footer>
 
-    <!-- 3. SERVICES -->
-    <section id="services" class="section services">
-      <div class="container">
-        <h2>Our Services</h2>
-        <p class="muted">Comprehensive services covering preventive to tertiary care.</p>
-        <div class="services-grid">
-          <article class="service">
-            <h4>Emergency Care</h4>
-            <p>Rapid response, trauma specialists and 24/7 coverage.</p>
-          </article>
-          <article class="service">
-            <h4>Surgery & ICU</h4>
-            <p>Minimally invasive and complex surgical procedures with dedicated ICU support.</p>
-          </article>
-          <article class="service">
-            <h4>Maternal & Child Health</h4>
-            <p>Comprehensive prenatal, delivery and neonatal services.</p>
-          </article>
-          <article class="service">
-            <h4>Diagnostics & Imaging</h4>
-            <p>MRI, CT, Ultrasound, and advanced labs with rapid reporting.</p>
-          </article>
-          <article class="service">
-            <h4>Rehabilitation</h4>
-            <p>Physiotherapy, occupational therapy and long-term care planning.</p>
-          </article>
-          <article class="service">
-            <h4>Telemedicine</h4>
-            <p>Remote consults and follow-ups via secure video.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. DEPARTMENTS -->
-    <section id="departments" class="section departments">
-      <div class="container">
-        <h2>Departments</h2>
-        <div class="dept-grid">
-          <div class="dept-card">
-            <h5>Cardiology</h5>
-            <p>Interventional cardiology & non-invasive testing.</p>
-          </div>
-          <div class="dept-card">
-            <h5>Neurology</h5>
-            <p>Stroke program, EEG and neurorehab.</p>
-          </div>
-          <div class="dept-card">
-            <h5>Orthopedics</h5>
-            <p>Joint replacement, sports medicine.</p>
-          </div>
-          <div class="dept-card">
-            <h5>Oncology</h5>
-            <p>Medical oncology, radiation therapy & support.</p>
-          </div>
-          <div class="dept-card">
-            <h5>Pediatrics</h5>
-            <p>Child health, immunization & wellness.</p>
-          </div>
-          <div class="dept-card">
-            <h5>Gastroenterology</h5>
-            <p>Endoscopy and liver care.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. DOCTORS -->
-    <section id="doctors" class="section doctors">
-      <div class="container">
-        <h2>Our Doctors</h2>
-        <p class="muted">Experienced specialists across disciplines.</p>
-        <div class="doctors-grid">
-          <!-- Example doctor cards -->
-          <div class="doctor">
-            <div class="avatar">DR</div>
-            <h4>Dr. Priya Sharma</h4>
-            <p>Cardiologist — MBBS, MD</p>
-            <a class="small-link" href="#contact">Book</a>
-          </div>
-          <div class="doctor">
-            <div class="avatar">DR</div>
-            <h4>Dr. Rohan Gupta</h4>
-            <p>Orthopedic Surgeon — MS Orth</p>
-            <a class="small-link" href="#contact">Book</a>
-          </div>
-          <div class="doctor">
-            <div class="avatar">DR</div>
-            <h4>Dr. Anjali Rao</h4>
-            <p>Neurologist — DM</p>
-            <a class="small-link" href="#contact">Book</a>
-          </div>
-          <div class="doctor">
-            <div class="avatar">DR</div>
-            <h4>Dr. Sameer Khan</h4>
-            <p>Pediatrician — DCH</p>
-            <a class="small-link" href="#contact">Book</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. APPOINTMENT (form wired to Firebase / fallback) -->
-    <section id="appointment" class="section appointment">
-      <div class="container">
-        <h2>Book an Appointment</h2>
-        <p class="muted">Fill the form and our team will reach out to you.</p>
-        <form id="appointmentForm" class="form-grid">
-          <input type="text" name="name" placeholder="Full name" required />
-          <input type="email" name="email" placeholder="Email address" required />
-          <input type="tel" name="phone" placeholder="Phone" required />
-          <select name="department" required>
-            <option value="">Choose Department</option>
-            <option>Cardiology</option>
-            <option>Neurology</option>
-            <option>Orthopedics</option>
-            <option>Pediatrics</option>
-            <option>Oncology</option>
-          </select>
-          <input type="date" name="date" required />
-          <input type="time" name="time" required />
-          <textarea name="notes" placeholder="Concise notes (optional)"></textarea>
-          <button class="btn primary" type="submit">Request Appointment</button>
-        </form>
-        <div id="appointmentMsg" class="muted small"></div>
-      </div>
-    </section>
-
-    <!-- 7. PATIENT PORTAL (links) -->
-    <section id="portal" class="section portal">
-      <div class="container">
-        <h2>Patient Portal & Resources</h2>
-        <p class="muted">Access records, pay bills and check test results.</p>
-        <div class="portal-grid">
-          <a class="portal-card" href="#" onclick="alert('Demo: login required')">Login to Portal</a>
-          <a class="portal-card" href="#" onclick="alert('Demo: pay bills')">Pay Online</a>
-          <a class="portal-card" href="#" onclick="alert('Demo: view records')">Medical Records</a>
-          <a class="portal-card" href="#" onclick="alert('Demo: join telemedicine')">Telemedicine</a>
-          <a class="portal-card" href="#" onclick="alert('Demo: view lab results')">Lab Results</a>
-          <a class="portal-card" href="#" onclick="alert('Demo: prescriptions')">Prescriptions</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. NEWS & ANNOUNCEMENTS -->
-    <section id="news" class="section news">
-      <div class="container">
-        <h2>News & Announcements</h2>
-        <div class="news-list">
-          <article class="news-item">
-            <h4>New Cardiac Cath Lab Opens</h4>
-            <p class="muted">We inaugurated a new cath lab improving procedural capacity.</p>
-            <a class="small-link" href="#">Read more</a>
-          </article>
-          <article class="news-item">
-            <h4>Free Diabetes Screening Camp</h4>
-            <p class="muted">Community screening on 22nd of the month. Walk-ins welcome.</p>
-            <a class="small-link" href="#">Register</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 9. TESTIMONIALS -->
-    <section id="testimonials" class="section testimonials">
-      <div class="container">
-        <h2>Patient Stories</h2>
-        <div class="testimonial-carousel" id="testCarousel">
-          <blockquote class="testimonial active">
-            <p>"The doctors and nurses made me feel safe and informed through my surgery." </p>
-            <cite>— R. Mehta</cite>
-          </blockquote>
-          <blockquote class="testimonial">
-            <p>"Quick emergency response saved my life — forever grateful."</p>
-            <cite>— S. Iyer</cite>
-          </blockquote>
-          <blockquote class="testimonial">
-            <p>"Excellent pediatric team. My daughter loves the play area and staff."</p>
-            <cite>— A. Bhatt</cite>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- 10. FACILITIES / GALLERY -->
-    <section id="facilities" class="section facilities">
-      <div class="container">
-        <h2>Facilities</h2>
-        <p class="muted">Modern infrastructure supporting patient comfort and clinical excellence.</p>
-        <div class="gallery">
-          <div class="photo">ER</div>
-          <div class="photo">ICU</div>
-          <div class="photo">O.R.</div>
-          <div class="photo">Pediatrics</div>
-          <div class="photo">Cafeteria</div>
-          <div class="photo">Rehab</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 11. CAREERS -->
-    <section id="careers" class="section careers">
-      <div class="container">
-        <h2>Careers</h2>
-        <p class="muted">Join our team — open roles in clinical and administrative areas.</p>
-        <ul class="job-list">
-          <li><strong>Staff Nurse</strong> — Full time <a href="#" class="small-link">Apply</a></li>
-          <li><strong>Lab Technician</strong> — Part time <a href="#" class="small-link">Apply</a></li>
-          <li><strong>Front Desk Executive</strong> — Full time <a href="#" class="small-link">Apply</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 12. FAQ -->
-    <section id="faq" class="section faq">
-      <div class="container">
-        <h2>Frequently Asked Questions</h2>
-        <div class="accordion" id="faqAcc">
-          <div class="acc-item">
-            <button class="acc-q">What are visiting hours?</button>
-            <div class="acc-a">Visiting hours: 8AM–8PM. ICU follows special rules—please check at reception.</div>
-          </div>
-          <div class="acc-item">
-            <button class="acc-q">Do you accept insurance?</button>
-            <div class="acc-a">We accept most major insurers. Contact billing or check our portal for a full list.</div>
-          </div>
-          <div class="acc-item">
-            <button class="acc-q">How do I get my lab results?</button>
-            <div class="acc-a">Results are uploaded to the Patient Portal within 48 hours. You will also get notified by SMS/email for critical reports.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 13. CONTACT -->
-    <section id="contact" class="section contact">
-      <div class="container">
-        <h2>Contact Us</h2>
-        <div class="contact-grid">
-          <div>
-            <p><strong>Address:</strong> 123 Health Ave, Uptown</p>
-            <p><strong>Phone:</strong> +91 12345 67890</p>
-            <p><strong>Email:</strong> contact@starlighthospital.example</p>
-            <div class="mini-links">
-              <a href="#appointment" class="small-link">Make Appointment</a>
-              <a href="#careers" class="small-link">Work with us</a>
-            </div>
-          </div>
-
-          <form id="contactForm" class="contact-form">
-            <input type="text" name="name" placeholder="Your name" required />
-            <input type="email" name="email" placeholder="Email" required />
-            <textarea name="message" placeholder="Message" rows="4" required></textarea>
-            <button class="btn" type="submit">Send Message</button>
-            <div id="contactMsg" class="muted small"></div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER (excluded from the 10+ sections) -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> Starlight Hospital</div>
-      <div class="social">
-        <a href="#" aria-label="Facebook">f</a>
-        <a href="#" aria-label="Twitter">t</a>
-        <a href="#" aria-label="LinkedIn">in</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JS -->
-  <script src="app.js" type="module"></script>
-</body>
+    <!-- JS -->
+    <script src="app.js" type="module"></script>
+  </body>
 </html>

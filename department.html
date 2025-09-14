@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Departments — Starlight Hospital</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Departments — Starlight Hospital</title>
 
-  <!-- Internal CSS -->
-  <style>
+    <!-- Internal CSS -->
+    <style>
     :root {
       --primary-color: #0F4C75;
       --secondary-color: #3282B8;
@@ -150,68 +150,71 @@
       color: var(--text-light);
     }
   </style>
-</head>
-<body>
+  </head>
+  <body>
 
-  <header>
-    <a href="index.html" class="brand">Starlight Hospital</a>
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="doctors.html">Doctors</a>
-      <a href="department.html">Departments</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <header>
+      <a href="index.html" class="brand">Starlight Hospital</a>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="department.html">Departments</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <main>
-    <h1>Our Departments</h1>
-    <p class="intro">Starlight Hospital houses a wide range of specialized medical departments to ensure comprehensive healthcare under one roof.</p>
+    <main>
+      <h1>Our Departments</h1>
+      <p class="intro">Starlight Hospital houses a wide range of specialized
+        medical departments to ensure comprehensive healthcare under one
+        roof.</p>
 
-    <div class="dept-grid">
-      <div class="dept-card" data-dept="cardiology">
-        <h3>Cardiology</h3>
-        <p>Advanced heart care with expert cardiologists.</p>
+      <div class="dept-grid">
+        <div class="dept-card" data-dept="cardiology">
+          <h3>Cardiology</h3>
+          <p>Advanced heart care with expert cardiologists.</p>
+        </div>
+        <div class="dept-card" data-dept="neurology">
+          <h3>Neurology</h3>
+          <p>Specialized treatment for brain and nervous system.</p>
+        </div>
+        <div class="dept-card" data-dept="orthopedics">
+          <h3>Orthopedics</h3>
+          <p>Bone, joint, and sports injury treatments.</p>
+        </div>
+        <div class="dept-card" data-dept="pediatrics">
+          <h3>Pediatrics</h3>
+          <p>Comprehensive healthcare for children and adolescents.</p>
+        </div>
+        <div class="dept-card" data-dept="oncology">
+          <h3>Oncology</h3>
+          <p>Cutting-edge cancer care and support programs.</p>
+        </div>
+        <div class="dept-card" data-dept="dermatology">
+          <h3>Dermatology</h3>
+          <p>Skin, hair, and cosmetic treatments.</p>
+        </div>
       </div>
-      <div class="dept-card" data-dept="neurology">
-        <h3>Neurology</h3>
-        <p>Specialized treatment for brain and nervous system.</p>
-      </div>
-      <div class="dept-card" data-dept="orthopedics">
-        <h3>Orthopedics</h3>
-        <p>Bone, joint, and sports injury treatments.</p>
-      </div>
-      <div class="dept-card" data-dept="pediatrics">
-        <h3>Pediatrics</h3>
-        <p>Comprehensive healthcare for children and adolescents.</p>
-      </div>
-      <div class="dept-card" data-dept="oncology">
-        <h3>Oncology</h3>
-        <p>Cutting-edge cancer care and support programs.</p>
-      </div>
-      <div class="dept-card" data-dept="dermatology">
-        <h3>Dermatology</h3>
-        <p>Skin, hair, and cosmetic treatments.</p>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="deptModal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <h2 id="modalTitle">Department</h2>
+        <p id="modalDesc">More information about the department will appear
+          here.</p>
       </div>
     </div>
-  </main>
 
-  <!-- Modal -->
-  <div class="modal" id="deptModal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <h2 id="modalTitle">Department</h2>
-      <p id="modalDesc">More information about the department will appear here.</p>
-    </div>
-  </div>
+    <footer>
+      © <span id="year"></span> Starlight Hospital — Excellence in healthcare
+    </footer>
 
-  <footer>
-    © <span id="year"></span> Starlight Hospital — Excellence in healthcare
-  </footer>
-
-  <!-- Internal JavaScript -->
-  <script>
+    <!-- Internal JavaScript -->
+    <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const deptInfo = {
@@ -242,5 +245,5 @@
       if (e.target === modal) modal.style.display = "none";
     });
   </script>
-</body>
+  </body>
 </html>

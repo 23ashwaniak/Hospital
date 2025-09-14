@@ -4,92 +4,102 @@
 // Immediately invoked to avoid polluting global namespace
 (() => {
   // -- Basic UI wiring --
-  const mobileToggle = document.getElementById('mobileToggle');
-  const mainNav = document.getElementById('mainNav');
-  const portalBtn = document.getElementById('portalBtn');
-  const yearEl = document.getElementById('year');
+  const mobileToggle = document.getElementById("mobileToggle");
+  const mainNav = document.getElementById("mainNav");
+  const portalBtn = document.getElementById("portalBtn");
+  const yearEl = document.getElementById("year");
 
   yearEl.textContent = new Date().getFullYear();
 
-  mobileToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('open');
+  mobileToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("open");
   });
 
   // Smooth scrolling for nav links
-  document.querySelectorAll('.nav-link').forEach(a => {
-    a.addEventListener('click', (e) => {
+  document.querySelectorAll(".nav-link").forEach((a) => {
+    a.addEventListener("click", (e) => {
       e.preventDefault();
-      mainNav.classList.remove('open'); // close mobile nav
-      const id = a.getAttribute('href').slice(1);
-      document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+      mainNav.classList.remove("open"); // close mobile nav
+      const id = a.getAttribute("href").slice(1);
+      document
+        .getElementById(id)
+        .scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 
   // Portal quick demo
-  portalBtn.addEventListener('click', () => {
-    alert('Patient Portal demo — integrate with Firebase Auth / OAuth for real logins.');
+  portalBtn.addEventListener("click", () => {
+    alert(
+      "Patient Portal demo — integrate with Firebase Auth / OAuth for real logins."
+    );
   });
 
   // Testimonials carousel (simple)
-  const carousel = document.getElementById('testCarousel');
-  if(carousel){
-    const slides = Array.from(carousel.querySelectorAll('.testimonial'));
+  const carousel = document.getElementById("testCarousel");
+  if (carousel) {
+    const slides = Array.from(carousel.querySelectorAll(".testimonial"));
     let i = 0;
     setInterval(() => {
-      slides.forEach(s => s.classList.remove('active'));
-      slides[i].classList.add('active');
+      slides.forEach((s) => s.classList.remove("active"));
+      slides[i].classList.add("active");
       i = (i + 1) % slides.length;
     }, 5000);
   }
 
   // Accordion (FAQ)
-  document.querySelectorAll('.acc-q').forEach(btn => {
-    btn.addEventListener('click', () => {
+  document.querySelectorAll(".acc-q").forEach((btn) => {
+    btn.addEventListener("click", () => {
       const panel = btn.nextElementSibling;
-      const open = panel.style.display === 'block';
-      document.querySelectorAll('.acc-a').forEach(a => a.style.display = 'none');
-      panel.style.display = open ? 'none' : 'block';
+      const open = panel.style.display === "block";
+      document
+        .querySelectorAll(".acc-a")
+        .forEach((a) => (a.style.display = "none"));
+      panel.style.display = open ? "none" : "block";
     });
   });
 
   // Quick appointment form (hero)
-  document.getElementById('quickForm')?.addEventListener('submit', (e) => {
+  document.getElementById("quickForm")?.addEventListener("submit", (e) => {
     e.preventDefault();
     const fd = new FormData(e.target);
     const data = Object.fromEntries(fd.entries());
-    saveSubmission('quickAppointments', data);
+    saveSubmission("quickAppointments", data);
     e.target.reset();
-    alert('Quick appointment requested. We will contact you.');
+    alert("Quick appointment requested. We will contact you.");
   });
 
   // Appointment form
-  const appointmentForm = document.getElementById('appointmentForm');
-  appointmentForm?.addEventListener('submit', async (e) => {
+  const appointmentForm = document.getElementById("appointmentForm");
+  appointmentForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target).entries());
-    document.getElementById('appointmentMsg').textContent = 'Submitting…';
+    document.getElementById("appointmentMsg").textContent = "Submitting…";
     try {
-      await saveSubmission('appointments', data);
-      document.getElementById('appointmentMsg').textContent = 'Appointment request received. We will contact you soon.';
+      await saveSubmission("appointments", data);
+      document.getElementById("appointmentMsg").textContent =
+        "Appointment request received. We will contact you soon.";
       e.target.reset();
     } catch (err) {
-      document.getElementById('appointmentMsg').textContent = 'Error saving request. Please try again.';
+      document.getElementById("appointmentMsg").textContent =
+        "Error saving request. Please try again.";
       console.error(err);
     }
   });
 
   // Contact form
-  const contactForm = document.getElementById('contactForm');
-  contactForm?.addEventListener('submit', async (e) => {
+  const contactForm = document.getElementById("contactForm");
+  contactForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target).entries());
-    document.getElementById('contactMsg').textContent = 'Sending…';
+    document.getElementById("contactMsg").textContent = "Sending…";
     try {
-      await saveSubmission('contactMessages', data);
-      document.getElementById('contactMsg').textContent = 'Message sent — thank you!';
+      await saveSubmission("contactMessages", data);
+      document.getElementById("contactMsg").textContent =
+        "Message sent — thank you!";
       e.target.reset();
     } catch (err) {
-      document.getElementById('contactMsg').textContent = 'Send failed. Please try again.';
+      document.getElementById("contactMsg").textContent =
+        "Send failed. Please try again.";
       console.error(err);
     }
   });
@@ -110,11 +120,11 @@
     } else {
       // Fallback: localStorage queue
       const key = `demo_${collection}`;
-      const existing = JSON.parse(localStorage.getItem(key) || '[]');
+      const existing = JSON.parse(localStorage.getItem(key) || "[]");
       existing.push(payload);
       localStorage.setItem(key, JSON.stringify(existing));
       // resolve promise so callers can await
-      return Promise.resolve({status:'saved-local', count: existing.length});
+      return Promise.resolve({ status: "saved-local", count: existing.length });
     }
   }
 
@@ -166,10 +176,9 @@
 
   // -- Accessibility niceties --
   // Close mobile menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if(!e.target.closest('.site-header')) mainNav.classList.remove('open');
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".site-header")) mainNav.classList.remove("open");
   });
 
   // End of IIFE
 })();
-
